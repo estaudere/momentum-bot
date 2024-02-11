@@ -5,7 +5,7 @@ import os
 deta = Deta(os.getenv('DETA_PROJECT_KEY'))
 users = deta.Base("users")
 
-SLACK_BOT_TOKEN='xoxb-2873829479361-5682028711814-pXNOqWPP6btCNiW4kbj4zEag'
+SLACK_BOT_TOKEN='token here'
 
 def fill_in_user(user_id):
     data = {
