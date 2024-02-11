@@ -1,0 +1,31 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: momentum-bot
+    src: ./bot
+    engine: python3.9
+    primary: true
+    run: uvicorn main:app
+    dev: uvicorn main:app --reload
+    public: true
+    presets:
+      env:
+        - name: SLACK_BOT_TOKEN
+          description: "Slack app OAuth token"
+        - name: SLACK_SIGNING_SECRET
+          description: "Slack app signing secret"
+        - name: SLACK_CLIENT_SECRET
+          description: "Slack app client secret"
+        - name: SLACK_CLIENT_ID
+          description: "Slack app client id"
+        - name: ADMIN_PW
+          description: "Password to register new admins"
+  # - name: dashboard
+  #   src: ./dashboard
+  #   engine: svelte
+  #   public: true
+  #   dev: npm run dev
+  #   commands:
+  #     - npm run build
+  #   serve: dist
+  #   path: dashboard
