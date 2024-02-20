@@ -3,6 +3,7 @@ from .user import handle_user
 from .event import handle_event
 from .committee import handle_committee
 from .help_text import help_text
+from .coffee import handle_coffee
 
 def router(event: EventInfo):
     text = parse_command(event.text)
@@ -13,8 +14,11 @@ def router(event: EventInfo):
     elif 'event' in text[0].lower():
         return handle_event(event, text)
     
-    elif 'committee' in text[0].lower():
-        return handle_committee(event, text)
+    # elif 'committee' in text[0].lower():
+    #     return handle_committee(event, text)
+
+    elif 'coffee' in text[0].lower():
+        return handle_coffee(event, text)
     
     else:
         # send some helpful text

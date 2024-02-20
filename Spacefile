@@ -20,6 +20,8 @@ micros:
           description: "Slack app client id"
         - name: ADMIN_PW
           description: "Password to register new admins"
+        - name: COFFEE_CHANNEL
+          description: "Slack channel to post coffee chats in the form name:id"
   # - name: dashboard
   #   src: ./dashboard
   #   engine: svelte
